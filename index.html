@@ -8,11 +8,21 @@
     </head>
     <body>
         <div class="main">
-            <div class="banner"></div>
+            <div class="banner" id="banner"></div>
             <div class="avatar-frame">
-                <img src="./assets/images/avatar.png" class="avatar" />
-                <img src="./assets/images/dune-deco.png" class="avatar-deco" />
+                <img
+                    id="avatar-img"
+                    src="assets/images/avatars/default.png"
+                    class="avatar"
+                />
+                <img
+                    id="avatar-deco"
+                    src="assets/images/decorations/dune.png"
+                    class="avatar-deco"
+                />
+                <!-- <div id="status-icon" class="status-icon"></div> -->
             </div>
+            <div class="socials" id="socials"></div>
             <div class="profile-body">
                 <div>
                     <div class="name">
@@ -37,5 +47,6 @@
                 </div>
             </div>
         </div>
+        <script src="script.js"></script>
     </body>
 </html>
