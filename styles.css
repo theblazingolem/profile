@@ -13,7 +13,7 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-image: url(assets/images/backgrounds/default.png);
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -30,7 +30,7 @@ body {
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
 }
 .banner {
-    background-image: url("assets/images/banners/default.png");
+    /* background-image: url("assets/images/banners/default.png"); */
     height: 180px;
     max-width: 525px;
     background-repeat: no-repeat;
@@ -132,3 +132,10 @@ body {
     border-radius: 5px;
     padding: 3px;
 } */
+@media (max-width: 525px) {
+    .main {
+        width: 100vw;
+        border-radius: 0;
+        height: 100vh;
+    }
+}

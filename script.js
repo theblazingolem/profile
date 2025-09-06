@@ -10,7 +10,8 @@ const banner = document.getElementById("banner");
 const main = document.getElementById("main");
 avatarImg.src = profileData.default.avatar;
 avatarDeco.src = profileData.default.deco;
-banner.src = profileData.default.banner;
+banner.style.backgroundImage = `url(${profileData.default.banner})`;
+document.body.style.backgroundImage = `url(${profileData.default.bg})`;
 
 const name = document.getElementById("name");
 const username = document.getElementById("username");
