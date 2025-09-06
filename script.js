@@ -23,10 +23,10 @@ about.innerHTML = profileData.about;
 interests.innerHTML = Object.entries(profileData.interests)
     .map(
         (x) =>
-            `<span class='interest-item ${x[0]}' id='${x[0]}'>${x[1].name}</span>`
+            `<span class='interest-item ${x[0]}' id='${x[0]}'>${x[1].name},&nbsp</span>`
         // (x) => console.log(x[0])
     )
-    .join(", ");
+    .join("");
 interests.addEventListener("click", (e) => {
     const clickedElement = e.target;
     const clickedId = clickedElement.id;
