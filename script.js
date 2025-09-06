@@ -1,3 +1,5 @@
+import { profileData } from "./assets/data.js";
+
 const onlineIcon = "./assets/images/statusIcons/online border.svg";
 const idleIcon = "./assets/images/statusIcons/idle border.svg";
 const dndIcon = "./assets/images/statusIcons/dnd border.svg";
@@ -5,17 +7,44 @@ const dndIcon = "./assets/images/statusIcons/dnd border.svg";
 const avatarImg = document.getElementById("avatar-img");
 const avatarDeco = document.getElementById("avatar-deco");
 const banner = document.getElementById("banner");
+const main = document.getElementById("main");
+avatarImg.src = profileData.default.avatar;
+avatarDeco.src = profileData.default.deco;
+banner.src = profileData.default.banner;
+
+const name = document.getElementById("name");
+const username = document.getElementById("username");
+const about = document.getElementById("about");
+const interests = document.getElementById("interests");
+name.textContent = profileData.name;
+username.textContent = "@" + profileData.username;
+about.innerHTML = profileData.about;
+interests.innerHTML = Object.entries(profileData.interests)
+    .map(
+        (x) =>
+            `<span class='interest-item ${x[0]}' id='${x[0]}'>${x[1].name}</span>`
+        // (x) => console.log(x[0])
+    )
+    .join(", ");
+interests.addEventListener("click", (e) => {
+    const clickedElement = e.target;
+    const clickedId = clickedElement.id;
+    if (clickedId) {
+        avatarImg.src = profileData.interests[clickedId].avatar;
+        avatarDeco.src = profileData.interests[clickedId].deco;
+        banner.style.backgroundImage = `url(${profileData.interests[clickedId].banner})`;
+        document.body.style.backgroundImage = `url(${profileData.interests[clickedId].bg})`;
+        main.style.background = `linear-gradient(to bottom, #${profileData.interests[clickedId].gradient.from} 30%, #${profileData.interests[clickedId].gradient.to} 100%)`;
+    }
+    if (clickedId == "twd") {
+        avatarDeco.style.filter = "saturate(0%)";
+    } else {
+        avatarDeco.style.filter = "saturate(100%)";
+    }
+});
 
 const social = document.getElementById("socials");
-const socialLinks = {
-    youtube: "https://www.youtube.com/@theblazinggolem",
-    instagram: "https://instagram.com/theblazinggolem",
-    twitter: "https://x.com/theblazinggolem",
-    github: "https://github.com/theblazingolem",
-    discord: "https://discord.com/users/732177983741362256/",
-    letterboxed: "https://letterboxd.com/theblazinggolem/",
-};
-
+const socialLinks = profileData.socials;
 social.innerHTML = Object.entries(socialLinks)
     .map(([key, url]) => {
         return `
@@ -26,69 +55,4 @@ social.innerHTML = Object.entries(socialLinks)
     })
     .join("");
 
-function getStatusType() {
-    const offset = { hours: 5, minutes: 30 }; // GMT+5:30
-    const now = new Date();
-    const utcHours = now.getUTCHours();
-    const utcMinutes = now.getUTCMinutes();
-
-    // Calculate your hour/minute
-    let hour = utcHours + offset.hours;
-    let minute = utcMinutes + offset.minutes;
-
-    if (minute >= 60) {
-        hour += 1;
-        minute -= 60;
-    }
-    if (hour >= 24) {
-        hour -= 24;
-    }
-
-    // Convert to minutes since midnight
-    const currentMinutes = hour * 60 + minute;
-
-    // Define ranges in minutes
-    const idle1 = [22 * 60, 24 * 60]; // 2200–2400
-    const idle2 = [0, 6 * 60]; // 0000–0600
-
-    const online1 = [6 * 60, 8 * 60 + 30]; // 0600–0830
-    const online2 = [13 * 60 + 30, 21 * 60]; // 1330–2100
-
-    const dnd1 = [8 * 60 + 30, 13 * 60 + 30]; // 0830–1330
-    const dnd2 = [21 * 60, 22 * 60]; // 2100–2200
-
-    function inRange(min, max) {
-        return currentMinutes >= min && currentMinutes < max;
-    }
-
-    // Check status brackets
-    if (inRange(idle1[0], idle1[1]) || inRange(idle2[0], idle2[1])) {
-        return "idle";
-    }
-    if (inRange(online1[0], online1[1]) || inRange(online2[0], online2[1])) {
-        return "online";
-    }
-    if (inRange(dnd1[0], dnd1[1]) || inRange(dnd2[0], dnd2[1])) {
-        return "dnd";
-    }
-    return "idle"; // fallback
-}
-
-function updateStatusIcon() {
-    const statusType = getStatusType();
-    const iconEl = document.getElementById("status-icon");
-    if (!iconEl) return;
-
-    // Set SVG depending on status
-    if (statusType === "online") {
-        iconEl.innerHTML = `<img src="${onlineIcon}" width="30" height="30" />`;
-    } else if (statusType === "dnd") {
-        iconEl.innerHTML = `<img src="${dndIcon}" width="30" height="30" />`;
-    } else {
-        iconEl.innerHTML = `<img src="${idleIcon}" width="30" height="30" />`;
-    }
-}
-
-// Run once on load and every 15 minutes
-updateStatusIcon();
-setInterval(updateStatusIcon, 900000);
+// console.log(profileData.name);
