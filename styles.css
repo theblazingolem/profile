@@ -1,11 +1,63 @@
 @font-face {
     font-family: ggsansB;
-    src: url(assets//fonts/ggsansBold.ttf);
+    src: url(https://res.cloudinary.com/dn2r9xax5/raw/upload/v1757219554/ggsansBold_kruxsb.ttf);
 }
 
 @font-face {
     font-family: ggsansSBold;
-    src: url(assets/fonts/ggsansSemiBold.ttf);
+    src: url(https://res.cloudinary.com/dn2r9xax5/raw/upload/v1757219555/ggsansSemiBold_gbra1j.ttf);
+}
+@font-face {
+    font-family: dune;
+    src: url(https://res.cloudinary.com/dn2r9xax5/raw/upload/v1757219554/herbertian_ttzf23.ttf);
+}
+@font-face {
+    font-family: jp;
+    src: url(https://res.cloudinary.com/dn2r9xax5/raw/upload/v1757219556/jp_voumbz.ttf);
+}
+@font-face {
+    font-family: inv;
+    src: url(https://res.cloudinary.com/dn2r9xax5/raw/upload/v1757219564/woodBlock_oslh6z.otf);
+}
+@font-face {
+    font-family: arc;
+    src: url(https://res.cloudinary.com/dn2r9xax5/raw/upload/v1757173279/arcaneNine_rts2lk.otf);
+}
+@font-face {
+    font-family: twd;
+    src: url(https://res.cloudinary.com/dn2r9xax5/raw/upload/v1757219554/ggsansBold_kruxsb.ttf);
+}
+@font-face {
+    font-family: rm;
+    src: url(https://res.cloudinary.com/dn2r9xax5/raw/upload/v1757219553/getSchwifty_cx2lcq.ttf);
+}
+@font-face {
+    font-family: rdr;
+    src: url(https://res.cloudinary.com/dn2r9xax5/raw/upload/v1757219557/rdr_xzcmou.ttf);
+}
+.dune {
+    font-family: dune;
+}
+.jurassic {
+    font-family: jp;
+    letter-spacing: 2px;
+    font-weight: 0;
+    font-size: 45px;
+}
+.invincible {
+    font-family: inv;
+}
+.arcane {
+    font-family: arc;
+}
+.twd {
+    font-family: twd;
+}
+.ricknMorty {
+    font-family: rm;
+}
+.rdr {
+    font-family: rdr;
 }
 body {
     margin: 0;
@@ -126,12 +178,15 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
-/* .interest-item {
+.interest-item {
     width: auto;
-    border: 2px solid white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     padding: 3px;
-*/
+    margin: 2px;
+    gap: 5px;
+    /* background-color: rgba(255, 255, 255, 0.85); */
+}
 @media (max-width: 525px) {
     .main {
         width: 100vw;
@@ -139,11 +194,11 @@ body {
         height: 100vh;
     }
     .banner {
-        height: 150px;
+        height: 120px;
     }
     .avatar {
-        height: 75px;
-        width: 75px;
+        height: 76.5px;
+        width: 76.5px;
     }
     .avatar-deco {
         height: 90px;
@@ -151,9 +206,10 @@ body {
     .avatar-frame {
         height: 100px;
         width: 100px;
+        margin-top: -50px;
     }
     .socials {
-        top: 145px;
+        top: 115px;
         width: 200px;
     }
     .socials .icons {

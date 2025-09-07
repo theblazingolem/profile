@@ -22,8 +22,7 @@ username.textContent = "@" + profileData.username;
 about.innerHTML = profileData.about;
 interests.innerHTML = Object.entries(profileData.interests)
     .map(
-        (x) =>
-            `<span class='interest-item ${x[0]}' id='${x[0]}'>${x[1].name},&nbsp</span>`
+        (x) => `<span class='interest-item' id='${x[0]}'>${x[1].name}</span>`
         // (x) => console.log(x[0])
     )
     .join("");
@@ -36,6 +35,7 @@ interests.addEventListener("click", (e) => {
         banner.style.backgroundImage = `url(${profileData.interests[clickedId].banner})`;
         document.body.style.backgroundImage = `url(${profileData.interests[clickedId].bg})`;
         main.style.background = `linear-gradient(to bottom, #${profileData.interests[clickedId].gradient.from} 30%, #${profileData.interests[clickedId].gradient.to} 100%)`;
+        document.body.style.backgroundColor = `linear-gradient(to bottom, #${profileData.interests[clickedId].gradient.to} 0%, #${profileData.interests[clickedId].gradient.from} 100%)`;
     }
     if (clickedId == "twd") {
         avatarDeco.style.filter = "saturate(0%)";

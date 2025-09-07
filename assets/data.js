@@ -11,7 +11,7 @@ const profileData = {
             bg: "https://res.cloudinary.com/dn2r9xax5/image/upload/v1756984916/dune_m63he8.jpg",
             gradient: { from: "2F2724", to: "A98F76" },
             highlight: null,
-            font: "",
+            font: "https://res.cloudinary.com/dn2r9xax5/raw/upload/v1757219554/herbertian_ttzf23.ttf",
         },
         jurassic: {
             name: "Jurassic Park",
@@ -21,7 +21,7 @@ const profileData = {
             bg: "https://res.cloudinary.com/dn2r9xax5/image/upload/v1756984908/jw_lxwpm3.jpg",
             gradient: { from: "293659", to: "43659D" },
             highlight: null,
-            font: "",
+            font: "https://res.cloudinary.com/dn2r9xax5/raw/upload/v1757219556/jp_voumbz.ttf",
         },
         invincible: {
             name: "Invincible",
@@ -31,7 +31,7 @@ const profileData = {
             bg: "https://res.cloudinary.com/dn2r9xax5/image/upload/v1756984905/invincble_fp3z4o.jpg",
             gradient: { from: "B54A3D", to: "20416E" },
             highlight: null,
-            font: "",
+            font: "https://res.cloudinary.com/dn2r9xax5/raw/upload/v1757219564/woodBlock_oslh6z.otf",
         },
         arcane: {
             name: "Arcane",
@@ -41,7 +41,7 @@ const profileData = {
             bg: "https://res.cloudinary.com/dn2r9xax5/image/upload/v1756984907/arcane_iup10r.png",
             gradient: { from: "161029", to: "673482" },
             highlight: null,
-            font: "",
+            font: "https://res.cloudinary.com/dn2r9xax5/raw/upload/v1757173279/arcaneNine_rts2lk.otf",
         },
         twd: {
             name: "The Walking Dead",
@@ -51,17 +51,17 @@ const profileData = {
             bg: "https://res.cloudinary.com/dn2r9xax5/image/upload/v1756984903/twd_qbeq1n.png",
             gradient: { from: "000000", to: "999999" },
             highlight: null,
-            font: "",
+            font: "https://res.cloudinary.com/dn2r9xax5/raw/upload/v1757221585/twd_syc6pm.ttf",
         },
         ricknMorty: {
-            name: "Rick & Morty",
+            name: "Rick n Morty",
             avatar: "https://res.cloudinary.com/dn2r9xax5/image/upload/v1756989683/rick_hjelpe.png",
             deco: "https://cdn.discordapp.com/avatar-decoration-presets/a_1e69b40cf0f52b68c511070dd7a29f34.png?size=240&passthrough=true",
             banner: "https://res.cloudinary.com/dn2r9xax5/image/upload/v1756990814/rm_rqgstc.png",
             bg: "https://res.cloudinary.com/dn2r9xax5/image/upload/v1756984901/r_m_zhygsu.jpg",
             gradient: { from: "FC6BFB", to: "3F92FF" },
             highlight: null,
-            font: "",
+            font: "https://res.cloudinary.com/dn2r9xax5/raw/upload/v1757219553/getSchwifty_cx2lcq.ttf",
         },
         rdr: {
             name: "Red Dead Redemption II",
@@ -71,7 +71,7 @@ const profileData = {
             bg: "https://res.cloudinary.com/dn2r9xax5/image/upload/v1756984903/rdr_zpcctj.jpg",
             gradient: { from: "764C44", to: "86ABB6" },
             highlight: null,
-            font: "",
+            font: "https://res.cloudinary.com/dn2r9xax5/raw/upload/v1757219557/rdr_xzcmou.ttf",
         },
     },
     socials: {
